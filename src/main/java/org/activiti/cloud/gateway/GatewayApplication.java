@@ -36,25 +36,25 @@ public class GatewayApplication {
 
     // see https://github.com/spring-cloud/spring-cloud-gateway/issues/229
     // TODO: this may not be needed anymore as might now be able to configure with https://cloud.spring.io/spring-cloud-gateway/multi/multi__cors_configuration.html
-    @Bean
-    public CorsConfiguration corsConfiguration(RoutePredicateHandlerMapping routePredicateHandlerMapping) {
-        CorsConfiguration corsConfiguration = new CorsConfiguration().applyPermitDefaultValues();
-        Arrays.asList(HttpMethod.OPTIONS, HttpMethod.PUT, HttpMethod.GET, HttpMethod.DELETE, HttpMethod.POST, HttpMethod.PATCH).
-                forEach(m -> corsConfiguration.addAllowedMethod(m));
-        corsConfiguration.addAllowedOrigin("*");
-        corsConfiguration.addAllowedHeader("Authorization");
-        corsConfiguration.addAllowedHeader("authorization");
-        corsConfiguration.addAllowedHeader("Content-Type");
-        corsConfiguration.addAllowedHeader("Cache-Control");
-        corsConfiguration.addAllowedHeader("X-Requested-With");
-        corsConfiguration.addAllowedHeader("acccept");
-        corsConfiguration.addAllowedHeader("Origin");
-        corsConfiguration.addAllowedHeader("Access-Control-Request-Method");
-        corsConfiguration.addAllowedHeader("Access-Control-Request-Headers");
-        corsConfiguration.addAllowedHeader("X-CSRF-Token");
-        corsConfiguration.addExposedHeader("Access-Control-Allow-Origin");
-        corsConfiguration.addExposedHeader("Access-Control-Allow-Credentials");
-        routePredicateHandlerMapping.setCorsConfigurations(new HashMap<String, CorsConfiguration>() {{ put("/**", corsConfiguration); }});
-        return corsConfiguration;
-    }
+//    @Bean
+//    public CorsConfiguration corsConfiguration(RoutePredicateHandlerMapping routePredicateHandlerMapping) {
+//        CorsConfiguration corsConfiguration = new CorsConfiguration().applyPermitDefaultValues();
+//        Arrays.asList(HttpMethod.OPTIONS, HttpMethod.PUT, HttpMethod.GET, HttpMethod.DELETE, HttpMethod.POST, HttpMethod.PATCH).
+//                forEach(m -> corsConfiguration.addAllowedMethod(m));
+//        corsConfiguration.addAllowedOrigin("*");
+//        corsConfiguration.addAllowedHeader("Authorization");
+//        corsConfiguration.addAllowedHeader("authorization");
+//        corsConfiguration.addAllowedHeader("Content-Type");
+//        corsConfiguration.addAllowedHeader("Cache-Control");
+//        corsConfiguration.addAllowedHeader("X-Requested-With");
+//        corsConfiguration.addAllowedHeader("acccept");
+//        corsConfiguration.addAllowedHeader("Origin");
+//        corsConfiguration.addAllowedHeader("Access-Control-Request-Method");
+//        corsConfiguration.addAllowedHeader("Access-Control-Request-Headers");
+//        corsConfiguration.addAllowedHeader("X-CSRF-Token");
+//        corsConfiguration.addExposedHeader("Access-Control-Allow-Origin");
+//        corsConfiguration.addExposedHeader("Access-Control-Allow-Credentials");
+//        routePredicateHandlerMapping.setCorsConfigurations(new HashMap<String, CorsConfiguration>() {{ put("/**", corsConfiguration); }});
+//        return corsConfiguration;
+//    }
 }
